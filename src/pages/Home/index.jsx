@@ -1,17 +1,22 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { ProductContext } from "../../providers/products";
 import api from "../../services/api";
 
 const Home = () => {
-  const [request, setRequest] = useState([]);
-  const [count, setCount] = useState(0);
+  // const [request, setRequest] = useState([]);
+  // const [count, setCount] = useState(0);
+  const { products, getProducts } = useContext(ProductContext);
   useEffect(() => {
-    api
-      .get("/books/v1/volumes?q=harry+potter/")
-      .then((response) => setRequest(response.data.items))
-      .catch((err) => console.log(err));
+    getProducts();
   }, []);
 
-  return <div>Home</div>;
+  return (
+    <ul>
+      {products.map((product, index) => (
+        <li key={index}>{product.volumeInfo.title}</li>
+      ))}
+    </ul>
+  );
 };
 
 export default Home;
