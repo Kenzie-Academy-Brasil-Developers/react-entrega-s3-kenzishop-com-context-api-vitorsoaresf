@@ -1,13 +1,10 @@
-import { useEffect, useState } from "react";
 import { Container } from "./styles";
+import { CartContext } from "../../providers/cart";
+import { useContext } from "react";
 
-const Product = ({ product }) => {
-  //   const { thumbnail } = product.volumeInfo.imageLinks;
-  //   const [state, setState] = useState(product.volumeInfo.imageLinks);
-  //   const [img, setImg] = useState("");
-
+const Product = ({ product, isCart }) => {
   const { volumeInfo } = product;
-  //   const { imageLinks } = volumeInfo;
+  const { addCart, removeCart } = useContext(CartContext);
 
   return (
     volumeInfo &&
@@ -17,7 +14,11 @@ const Product = ({ product }) => {
         {volumeInfo.imageLinks && (
           <img src={volumeInfo.imageLinks.thumbnail} alt="" />
         )}
-        <button>Adicionar</button>
+        {isCart ? (
+          <button onClick={addCart}>Adicionar</button>
+        ) : (
+          <button onClick={removeCart}>Remover</button>
+        )}
       </Container>
     )
   );
