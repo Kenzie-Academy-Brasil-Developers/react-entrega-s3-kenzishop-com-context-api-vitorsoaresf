@@ -4,7 +4,7 @@ import { useContext } from "react";
 
 const Product = ({ product, isCart }) => {
   const { volumeInfo } = product;
-  const { cart, addCart, removeCart } = useContext(CartContext);
+  const { addCart, removeCart } = useContext(CartContext);
 
   return (
     volumeInfo &&
@@ -15,7 +15,7 @@ const Product = ({ product, isCart }) => {
           <img src={volumeInfo.imageLinks.thumbnail} alt="" />
         )}
         {isCart ? (
-          <button onClick={() => removeCart(product)}>Remover</button>
+          <button onClick={() => removeCart(product.id)}>Remover</button>
         ) : (
           <button onClick={() => addCart(product)}>Adicionar</button>
         )}

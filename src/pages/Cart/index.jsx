@@ -3,10 +3,8 @@ import { useContext } from "react";
 import Product from "../../Components/Product";
 
 const Cart = () => {
-  // const { cart, addCart, removeCart } = useContext(CartContext);
-  const cart = JSON.parse(localStorage.getItem("@cart"));
+  const { cart } = useContext(CartContext);
   return (
-    // <div>Cart</div>
     <ul>
       {cart.map((product, index) => (
         <Product isCart key={index} product={product} />
