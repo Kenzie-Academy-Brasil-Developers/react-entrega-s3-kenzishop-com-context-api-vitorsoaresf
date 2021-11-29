@@ -15,9 +15,9 @@ const Product = ({ product, isCart }) => {
           <img src={volumeInfo.imageLinks.thumbnail} alt="" />
         )}
         {isCart ? (
-          <button onClick={addCart}>Adicionar</button>
+          <button onClick={() => removeCart(product)}>Remover</button>
         ) : (
-          <button onClick={removeCart}>Remover</button>
+          <button onClick={() => addCart(product)}>Adicionar</button>
         )}
       </Container>
     )
