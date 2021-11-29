@@ -30,7 +30,9 @@ export const Container = styled.li`
   img {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
+
   p {
+    font-style: italic;
   }
   span {
     color: #aa5b39;
