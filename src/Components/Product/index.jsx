@@ -3,7 +3,7 @@ import { CartContext } from "../../providers/cart";
 import { useContext } from "react";
 
 const Product = ({ product, isCart }) => {
-  const { volumeInfo } = product;
+  const { volumeInfo, saleInfo } = product;
   const { addCart, removeCart } = useContext(CartContext);
 
   return (
@@ -14,6 +14,7 @@ const Product = ({ product, isCart }) => {
         {volumeInfo.imageLinks && (
           <img src={volumeInfo.imageLinks.thumbnail} alt="" />
         )}
+        {saleInfo.listPrice && <p>{saleInfo.listPrice.amount}</p>}
         {isCart ? (
           <button onClick={() => removeCart(product.id)}>Remover</button>
         ) : (
