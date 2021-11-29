@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import { ProductContext } from "../../providers/products";
+import Product from "../../Components/Product";
 import api from "../../services/api";
-
 const Home = () => {
   // const [request, setRequest] = useState([]);
   // const [count, setCount] = useState(0);
@@ -9,11 +9,11 @@ const Home = () => {
   useEffect(() => {
     getProducts();
   }, []);
-
+  console.log(products);
   return (
     <ul>
       {products.map((product, index) => (
-        <li key={index}>{product.volumeInfo.title}</li>
+        <Product key={index} product={product} />
       ))}
     </ul>
   );
