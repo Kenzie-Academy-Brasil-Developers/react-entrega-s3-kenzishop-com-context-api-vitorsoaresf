@@ -4,7 +4,7 @@ import { useContext } from "react";
 
 const Product = ({ product, isCart }) => {
   const { volumeInfo } = product;
-  const { addCart, removeCart } = useContext(CartContext);
+  const { cart, addCart, removeCart } = useContext(CartContext);
 
   return (
     volumeInfo &&
