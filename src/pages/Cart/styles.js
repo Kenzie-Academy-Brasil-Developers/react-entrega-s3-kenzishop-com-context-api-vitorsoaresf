@@ -8,6 +8,11 @@ export const Container = styled.ul`
   padding: 0;
 
   li {
-    width: 100vw;
+    button {
+      background-color: var(--red);
+
+      :hover {
+      }
+    }
   }
 `;
