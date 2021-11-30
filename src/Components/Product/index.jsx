@@ -3,6 +3,7 @@ import { CartContext } from "../../providers/cart";
 import { useContext } from "react";
 import { useHistory, Link } from "react-router-dom";
 import Bt from "../Bt";
+import toast from "react-hot-toast";
 
 const Product = ({ product, isCart }) => {
   const { volumeInfo, saleInfo } = product;
@@ -18,17 +19,41 @@ const Product = ({ product, isCart }) => {
         )}
         {saleInfo.listPrice && <span>R$ {saleInfo.listPrice.amount}</span>}
 
-        <Link to={`/product/${product.id}`}>{volumeInfo.title}</Link>
+        <Link to={`/product/${product.id}`}>
+          {volumeInfo.title.slice(0, 50)}...
+        </Link>
 
-        <p>{volumeInfo.authors[0]}</p>
+        <p>
+          {volumeInfo.authors
+            ? `${
+                volumeInfo.authors[0].length > 20
+                  ? `${volumeInfo.authors[0].slice(0, 20)}...`
+                  : volumeInfo.authors[0]
+              }`
+            : "Sem autor definido"}
+        </p>
 
         {isCart ? (
           <div>
-            <Bt onClick={() => removeCart(product.id)}>Remover</Bt>
+            <Bt
+              onClick={() => {
+                toast.success("Livro REMOVIDO");
+                removeCart(product.id);
+              }}
+            >
+              Remover
+            </Bt>
           </div>
         ) : (
           <div>
-            <Bt onClick={() => addCart(product)}>Adicionar</Bt>
+            <Bt
+              onClick={() => {
+                toast.success("Livro ADICIONADO");
+                addCart(product);
+              }}
+            >
+              Adicionar
+            </Bt>
             <Bt onClick={() => history.push(`/product/${product.id}`)}>
               Detalhes
             </Bt>

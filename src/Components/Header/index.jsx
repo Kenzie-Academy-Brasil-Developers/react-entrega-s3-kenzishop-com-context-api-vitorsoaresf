@@ -4,6 +4,7 @@ import { FiHome, FiShoppingCart, FiSearch } from "react-icons/fi";
 import { useContext } from "react";
 import { SearchContext } from "../../providers/search";
 import { ProductContext } from "../../providers/products";
+import { toast } from "react-hot-toast";
 import img from "../../assets/logo.jpg";
 import Bt from "../Bt";
 
@@ -13,7 +14,9 @@ const Header = () => {
   const { getProducts } = useContext(ProductContext);
 
   const onSearch = () => {
-    getProducts(search);
+    getProducts(search)
+      .then((_) => toast.success("Autor(a) / Obra encontrado(a)"))
+      .catch((_) => toast.error("Autor(a) / Obra não encontrado(a)"));
     history.push("/");
   };
 

@@ -42,6 +42,13 @@ export const Container = styled.li`
   a {
     margin-left: 40px;
   }
+
+  a {
+    width: 80%;
+    height: 50px;
+    /* background-color: violet; */
+  }
+
   p {
     font-style: italic;
     font-size: 1rem;

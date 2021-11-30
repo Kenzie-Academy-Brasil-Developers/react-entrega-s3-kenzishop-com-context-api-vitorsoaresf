@@ -8,7 +8,7 @@ export const ProductProvider = ({ children }) => {
   const getProducts = async (inputSearch) => {
     await api
       .get(`/books/v1/volumes?q=${inputSearch}`)
-      .then((response) =>
+      .then((response) => {
         setProducts(
           response.data.items.map((product) => {
             if (!product.saleInfo.hasOwnProperty("listPrice")) {
@@ -16,8 +16,8 @@ export const ProductProvider = ({ children }) => {
             }
             return product;
           })
-        )
-      )
+        );
+      })
       .catch((err) => console.log(err));
   };
 
