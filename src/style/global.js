@@ -4,7 +4,7 @@ const GlobalStyle = createGlobalStyle`
     body{
         margin:0;
         padding: 0;
-        background-color: var(--grey-0);
+        background-color: var(--white);
         font-family: 'Inter', sans-serif;
     }
 
@@ -18,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
         --grey-0: #F5F5F5;
         --red:#c0392b;
         --blue:#487eb0;
+        --blue-logo: #001B85;
     }
 `;
 

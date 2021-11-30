@@ -8,7 +8,7 @@ const Bt = ({ children, ...rest }) => {
     },
     palette: {
       primary: {
-        main: "#487eb0",
+        main: "#001B85",
         darker: "#d4e6fd",
       },
       neutral: {
