@@ -11,7 +11,7 @@ const Routes = () => {
   const { getProducts } = useContext(ProductContext);
 
   useEffect(() => {
-    getProducts();
+    getProducts("j+r+r+tolkien");
   }, []);
 
   return (

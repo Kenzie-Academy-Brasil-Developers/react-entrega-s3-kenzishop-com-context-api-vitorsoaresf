@@ -5,9 +5,9 @@ export const ProductContext = createContext();
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
 
-  const getProducts = async () => {
+  const getProducts = async (inputSearch) => {
     await api
-      .get("/books/v1/volumes?q=j+r+r+tolkien")
+      .get(`/books/v1/volumes?q=${inputSearch}`)
       .then((response) =>
         setProducts(
           response.data.items.map((product) => {

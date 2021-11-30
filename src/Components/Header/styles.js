@@ -60,7 +60,6 @@ export const ContainerSearch = styled.div`
   margin: 50px 0;
 
   h3 {
-    /* color: var(--blue-logo); */
   }
 
   div {
@@ -89,7 +88,7 @@ export const ContainerSearch = styled.div`
     }
 
     button {
-      height: 55px;
+      height: 54px;
       border-radius: 0 5px 5px 0;
 
       :hover {

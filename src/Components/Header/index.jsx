@@ -1,13 +1,21 @@
 import { useHistory } from "react-router-dom";
 import { Container, ContainerTitle, ContainerSearch } from "./styles";
 import { FiHome, FiShoppingCart, FiSearch } from "react-icons/fi";
+import { useContext } from "react";
+import { SearchContext } from "../../providers/search";
+import { ProductContext } from "../../providers/products";
 import img from "../../assets/logo.jpg";
-import { useState } from "react";
 import Bt from "../Bt";
 
 const Header = () => {
   const history = useHistory();
-  const [input, setInput] = useState("");
+  const { search, setSearch } = useContext(SearchContext);
+  const { getProducts } = useContext(ProductContext);
+
+  const onSearch = () => {
+    getProducts(search);
+    history.push("/");
+  };
 
   return (
     <Container>
@@ -30,9 +38,9 @@ const Header = () => {
         <div>
           <input
             placeholder=" Autor"
-            onChange={(e) => setInput(e.target.value)}
+            onChange={(e) => setSearch(e.target.value)}
           />
-          <Bt>
+          <Bt onClick={() => onSearch()}>
             <FiSearch />
           </Bt>
         </div>
