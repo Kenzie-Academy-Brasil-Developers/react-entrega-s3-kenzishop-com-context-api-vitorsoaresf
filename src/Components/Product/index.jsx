@@ -1,7 +1,7 @@
 import { Container } from "./styles";
 import { CartContext } from "../../providers/cart";
 import { useContext } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import Bt from "../Bt";
 
 const Product = ({ product, isCart }) => {
@@ -13,17 +13,17 @@ const Product = ({ product, isCart }) => {
     volumeInfo &&
     volumeInfo.hasOwnProperty("imageLinks") && (
       <Container>
-        <h3>{volumeInfo.title}</h3>
         {volumeInfo.imageLinks && (
           <img src={volumeInfo.imageLinks.thumbnail} alt="" />
         )}
+        {saleInfo.listPrice && <span>R$ {saleInfo.listPrice.amount}</span>}
+        <Link to={`/product/${product.id}`}>{volumeInfo.title}</Link>
         <p>{volumeInfo.authors[0]}</p>
         {/* <details>
           <summary>Resumo</summary>
           <p>{volumeInfo.description}</p>
         </details> */}
 
-        {saleInfo.listPrice && <span>R$ {saleInfo.listPrice.amount}</span>}
         {isCart ? (
           <Bt onClick={() => removeCart(product.id)}>Remover</Bt>
         ) : (
