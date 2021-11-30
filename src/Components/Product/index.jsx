@@ -23,7 +23,12 @@ const Product = ({ product, isCart }) => {
         <p>{volumeInfo.authors[0]}</p>
 
         {isCart ? (
-          <Bt onClick={() => removeCart(product.id)}>Remover</Bt>
+          <div>
+            <Bt onClick={() => removeCart(product.id)}>Remover</Bt>
+            <Bt onClick={() => history.push(`/product/${product.id}`)}>
+              Detalhes
+            </Bt>
+          </div>
         ) : (
           <div>
             <Bt onClick={() => addCart(product)}>Adicionar</Bt>

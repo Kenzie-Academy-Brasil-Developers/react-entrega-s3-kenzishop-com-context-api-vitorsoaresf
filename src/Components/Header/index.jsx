@@ -34,10 +34,10 @@ const Header = () => {
         </section>
       </ContainerTitle>
       <ContainerSearch>
-        <h3>Busque pelo autor</h3>
+        <h3>Busque pelo Autor / Obra</h3>
         <div>
           <input
-            placeholder=" Autor"
+            placeholder=" Autor / obra"
             onChange={(e) => setSearch(e.target.value)}
           />
           <Bt onClick={() => onSearch()}>
