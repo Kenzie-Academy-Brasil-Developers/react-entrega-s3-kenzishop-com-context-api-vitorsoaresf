@@ -17,12 +17,10 @@ const Product = ({ product, isCart }) => {
           <img src={volumeInfo.imageLinks.thumbnail} alt="" />
         )}
         {saleInfo.listPrice && <span>R$ {saleInfo.listPrice.amount}</span>}
+
         <Link to={`/product/${product.id}`}>{volumeInfo.title}</Link>
+
         <p>{volumeInfo.authors[0]}</p>
-        {/* <details>
-          <summary>Resumo</summary>
-          <p>{volumeInfo.description}</p>
-        </details> */}
 
         {isCart ? (
           <Bt onClick={() => removeCart(product.id)}>Remover</Bt>
