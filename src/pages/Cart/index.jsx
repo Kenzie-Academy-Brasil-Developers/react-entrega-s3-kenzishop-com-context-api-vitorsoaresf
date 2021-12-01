@@ -1,23 +1,45 @@
 import { CartContext } from "../../providers/cart";
 import { useContext } from "react";
-import { Container } from "./styles";
+import { Container, ContainerCart, ContainerAmount } from "./styles";
 import img from "../../assets/cart.svg";
 import Product from "../../Components/Product";
 
 const Cart = () => {
   const { cart } = useContext(CartContext);
+  console.log(cart);
   return (
     <Container>
-      {cart.length === 0 ? (
+      <ContainerCart>
+        {cart.length === 0 ? (
+          <div>
+            <p>Seu carrinho está vazio</p>
+            <img src={img} alt="cart_img" />
+          </div>
+        ) : (
+          cart.map((product, index) => (
+            <Product isCart key={index} product={product} />
+          ))
+        )}
+      </ContainerCart>
+      <ContainerAmount>
         <div>
-          <p>Seu carrinho está vazio</p>
-          <img src={img} alt="cart_img" />
+          <header>
+            <p>Resumo do Pedido</p>
+          </header>
+          <section>
+            <p>{cart.length} Pedidos</p>
+            <span>
+              R$
+              {cart
+                .reduce(
+                  (acc, book) => (acc += book.saleInfo.listPrice.amount),
+                  0
+                )
+                .toFixed(2)}
+            </span>
+          </section>
         </div>
-      ) : (
-        cart.map((product, index) => (
-          <Product isCart key={index} product={product} />
-        ))
-      )}
+      </ContainerAmount>
     </Container>
   );
 };
