@@ -15,4 +15,24 @@ export const Container = styled.ul`
       }
     }
   }
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--grey-50);
+    }
+    img {
+      width: 90%;
+      height: 90%;
+    }
+
+    @media (min-width: 768px) {
+      p {
+        font-size: 2rem;
+      }
+    }
+  }
 `;
