@@ -11,7 +11,17 @@ export const CartProvider = ({ children }) => {
   };
 
   const removeCart = (itemId) => {
-    setCart(cart.filter((product) => product.id !== itemId));
+    const copyCart = cart.slice();
+    copyCart.splice(
+      cart.indexOf(cart.find((product) => product.id === itemId)),
+      1
+    );
+
+    setCart([...copyCart]);
+
+    // console.log(cart.indexOf(cart.find((product) => product.id === itemId)));
+    // console.log(cart);
+    // setCart(cart.filter((product) => product.id !== itemId));
   };
 
   localStorage.setItem("@cart", JSON.stringify(cart));
