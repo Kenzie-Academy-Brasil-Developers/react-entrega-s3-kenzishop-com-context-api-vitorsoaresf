@@ -57,6 +57,15 @@ export const ContainerTitle = styled.header`
         background-color: var(--orange);
       }
 
+      span {
+        position: absolute;
+        transform: translateX(-50%);
+        margin-top: -7px;
+        border-radius: 100%;
+        background-color: var(--orange);
+        padding: 0 5px;
+      }
+
       svg {
         font-size: 1.1rem;
       }
@@ -92,6 +101,12 @@ export const ContainerTitle = styled.header`
 
         :hover {
           background-color: var(--orange);
+        }
+        span {
+          transform: translateX(-50%);
+          margin-top: -7px;
+          padding: 2px 8px;
+          font-size: 1rem;
         }
 
         svg {

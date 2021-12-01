@@ -3,6 +3,7 @@ import { Container, ContainerTitle, ContainerSearch } from "./styles";
 import { FiHome, FiShoppingCart, FiSearch } from "react-icons/fi";
 import { useContext } from "react";
 import { SearchContext } from "../../providers/search";
+import { CartContext } from "../../providers/cart";
 import { ProductContext } from "../../providers/products";
 import { toast } from "react-hot-toast";
 import img from "../../assets/logo.jpg";
@@ -12,6 +13,7 @@ const Header = () => {
   const history = useHistory();
   const { search, setSearch } = useContext(SearchContext);
   const { getProducts } = useContext(ProductContext);
+  const { cart } = useContext(CartContext);
 
   const onSearch = () => {
     getProducts(search)
@@ -33,6 +35,7 @@ const Header = () => {
           </button>
           <button onClick={() => history.push("/cart")}>
             <FiShoppingCart />
+            {cart.length > 0 && <span>{cart.length}</span>}
           </button>
         </section>
       </ContainerTitle>
