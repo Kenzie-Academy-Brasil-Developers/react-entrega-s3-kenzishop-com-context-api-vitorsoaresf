@@ -6,7 +6,6 @@ import Product from "../../Components/Product";
 
 const Cart = () => {
   const { cart } = useContext(CartContext);
-  console.log(cart);
 
   return (
     <Container>
