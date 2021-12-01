@@ -7,6 +7,7 @@ import Product from "../../Components/Product";
 const Cart = () => {
   const { cart } = useContext(CartContext);
   console.log(cart);
+
   return (
     <Container>
       <ContainerCart>
@@ -21,25 +22,27 @@ const Cart = () => {
           ))
         )}
       </ContainerCart>
-      <ContainerAmount>
-        <div>
-          <header>
-            <p>Resumo do Pedido</p>
-          </header>
-          <section>
-            <p>{cart.length} Pedidos</p>
-            <span>
-              R$
-              {cart
-                .reduce(
-                  (acc, book) => (acc += book.saleInfo.listPrice.amount),
-                  0
-                )
-                .toFixed(2)}
-            </span>
-          </section>
-        </div>
-      </ContainerAmount>
+      {cart.length !== 0 && (
+        <ContainerAmount>
+          <div>
+            <header>
+              <p>Resumo do Pedido</p>
+            </header>
+            <section>
+              <p>{cart.length} Pedidos</p>
+              <span>
+                R$
+                {cart
+                  .reduce(
+                    (acc, book) => (acc += book.saleInfo.listPrice.amount),
+                    0
+                  )
+                  .toFixed(2)}
+              </span>
+            </section>
+          </div>
+        </ContainerAmount>
+      )}
     </Container>
   );
 };
