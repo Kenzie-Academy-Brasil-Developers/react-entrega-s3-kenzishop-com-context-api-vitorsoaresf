@@ -74,7 +74,7 @@ export const ContainerTitle = styled.header`
     }
     button + button {
       margin-left: 5px;
-      margin-right: 10px;
+      margin-right: 20px;
     }
   }
 
