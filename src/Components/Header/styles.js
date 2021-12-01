@@ -187,6 +187,6 @@ export const ContainerLoading = styled.div`
   background-color: rgba(0, 27, 133, 0.5);
   margin: 0;
   color: var(--white);
-  font-size: 5rem;
+  font-size: 3rem;
   z-index: 1;
 `;
