@@ -40,10 +40,13 @@ export const Container = styled.div`
   }
 
   .info {
-    width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     margin-top: 10px;
+    /* background-color: violet; */
 
     header {
       font-weight: 900;
@@ -52,10 +55,11 @@ export const Container = styled.div`
       margin: 10px 0;
     }
     div {
-      width: 80%;
+      /* width: 80%; */
+      margin: 0 20px;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       justify-content: center;
       margin-left: 30px;
       margin-bottom: 20px;
@@ -75,4 +79,15 @@ export const Container = styled.div`
       }
     }
   }
+
+  /* @media (min-width: 768px) {
+    .info {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+
+      
+    }
+  } */
 `;

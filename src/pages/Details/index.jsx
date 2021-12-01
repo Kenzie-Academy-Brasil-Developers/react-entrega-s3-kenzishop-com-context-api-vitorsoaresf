@@ -9,6 +9,8 @@ import {
   FiCalendar,
   FiUsers,
 } from "react-icons/fi";
+import Bt from "../../Components/Bt";
+import { useHistory } from "react-router-dom";
 
 const Details = () => {
   const { products } = useContext(ProductContext);
@@ -16,7 +18,8 @@ const Details = () => {
   const { volumeInfo, saleInfo } = products.find(
     (product) => product.id === params.id
   );
-  console.log(volumeInfo);
+  const history = useHistory();
+
   return (
     <Container>
       <img src={volumeInfo.imageLinks.thumbnail} alt="" />
@@ -28,7 +31,7 @@ const Details = () => {
       </section>
       <hr />
       <section className="info">
-        <header>Informações</header>
+        {/* <header>Informações</header> */}
         <div>
           <span>Páginas</span>
           <p>
@@ -64,6 +67,7 @@ const Details = () => {
           </p>
         </div>
       </section>
+      <Bt onClick={() => history.push("/")}>Voltar</Bt>
     </Container>
   );
 };
