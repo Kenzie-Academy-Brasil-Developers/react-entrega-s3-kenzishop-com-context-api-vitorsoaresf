@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  /* flex-wrap: wrap; */
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -12,17 +11,15 @@ export const Container = styled.div`
   @media (min-width: 1024px) {
     flex-direction: row;
     align-items: flex-start;
-    justify-content: space-between;
   }
 `;
 
 export const ContainerCart = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  /* flex-direction: column; */
   align-items: center;
   justify-content: center;
-  margin: 0;
+  margin-left: 0;
   padding: 0;
   max-width: 650px;
 
@@ -54,6 +51,10 @@ export const ContainerCart = styled.ul`
       }
     }
   }
+
+  @media (min-width: 1024px) {
+    margin-left: 20px;
+  }
 `;
 
 export const ContainerAmount = styled.div`
@@ -61,7 +62,7 @@ export const ContainerAmount = styled.div`
   width: 310px;
   height: 110px;
   border-radius: 10px;
-  margin: 20px 0;
+  margin: 20px 20px;
 
   header {
     display: flex;
@@ -108,5 +109,6 @@ export const ContainerAmount = styled.div`
   }
 
   @media (min-width: 1024px) {
+    margin-right: 20px;
   }
 `;
