@@ -7,6 +7,8 @@ export const Container = styled.div`
   align-items: center;
   width: 100vw;
   z-index: 0;
+  max-width: 1024px;
+  margin: 0 auto;
 `;
 
 export const ContainerTitle = styled.header`
@@ -20,7 +22,6 @@ export const ContainerTitle = styled.header`
   width: 100%;
   height: 100px;
   border-radius: 10px 10px 0 0;
-  max-width: 1444px;
   z-index: 0;
 
   .container_logo {
