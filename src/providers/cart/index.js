@@ -18,10 +18,6 @@ export const CartProvider = ({ children }) => {
     );
 
     setCart([...copyCart]);
-
-    // console.log(cart.indexOf(cart.find((product) => product.id === itemId)));
-    // console.log(cart);
-    // setCart(cart.filter((product) => product.id !== itemId));
   };
 
   localStorage.setItem("@cart", JSON.stringify(cart));

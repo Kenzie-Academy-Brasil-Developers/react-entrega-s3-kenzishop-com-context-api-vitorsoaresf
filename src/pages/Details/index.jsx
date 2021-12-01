@@ -31,7 +31,6 @@ const Details = () => {
       </section>
       <hr />
       <section className="info">
-        {/* <header>Informações</header> */}
         <div>
           <span>Páginas</span>
           <p>

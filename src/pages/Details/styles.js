@@ -46,7 +46,6 @@ export const Container = styled.div`
     align-items: center;
     flex-wrap: wrap;
     margin-top: 10px;
-    /* background-color: violet; */
 
     header {
       font-weight: 900;
@@ -55,7 +54,6 @@ export const Container = styled.div`
       margin: 10px 0;
     }
     div {
-      /* width: 80%; */
       margin: 0 20px;
       display: flex;
       flex-direction: column;
@@ -79,15 +77,4 @@ export const Container = styled.div`
       }
     }
   }
-
-  /* @media (min-width: 768px) {
-    .info {
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-
-      
-    }
-  } */
 `;

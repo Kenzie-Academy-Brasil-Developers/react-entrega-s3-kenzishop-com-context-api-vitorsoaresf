@@ -124,7 +124,6 @@ export const ContainerSearch = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* margin: 50px 0; */
   width: 100%;
   height: 100px;
   max-width: 1444px;
@@ -168,11 +167,8 @@ export const ContainerSearch = styled.div`
       height: 54px;
       border-radius: 0 5px 5px 0;
       background-color: var(--orange);
-
-      :hover {
-        /* background-color: #e67e22; */
-      }
     }
+
     svg {
       font-size: 1.5rem;
     }

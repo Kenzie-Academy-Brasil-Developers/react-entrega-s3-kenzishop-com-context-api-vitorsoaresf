@@ -46,7 +46,6 @@ export const Container = styled.li`
   a {
     width: 80%;
     height: 50px;
-    /* background-color: violet; */
   }
 
   p {
