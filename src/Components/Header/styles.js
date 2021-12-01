@@ -178,3 +178,16 @@ export const ContainerSearch = styled.div`
     }
   }
 `;
+
+export const ContainerLoading = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 27, 133, 0.5);
+  margin: 0;
+  color: var(--white);
+  font-size: 5rem;
+`;

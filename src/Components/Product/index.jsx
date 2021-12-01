@@ -37,7 +37,7 @@ const Product = ({ product, isCart }) => {
           <div>
             <Bt
               onClick={() => {
-                toast.success("Livro REMOVIDO");
+                toast.success("Livro REMOVIDO do carrinho");
                 removeCart(product.id);
               }}
             >
@@ -48,7 +48,7 @@ const Product = ({ product, isCart }) => {
           <div>
             <Bt
               onClick={() => {
-                toast.success("Livro ADICIONADO");
+                toast.success("Livro ADICIONADO no carrinho");
                 addCart(product);
               }}
             >
