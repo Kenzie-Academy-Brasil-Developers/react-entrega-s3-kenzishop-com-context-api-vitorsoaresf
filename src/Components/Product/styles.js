@@ -10,10 +10,6 @@ export const Container = styled.li`
   width: 100vh;
   max-width: 310px;
 
-  :hover {
-    border-bottom: 2px solid var(--grey-50);
-  }
-
   a {
     border-radius: 10px 10px 0 0;
     height: 70px;

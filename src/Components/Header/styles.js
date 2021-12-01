@@ -6,6 +6,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   width: 100vw;
+  z-index: 0;
 `;
 
 export const ContainerTitle = styled.header`
@@ -20,6 +21,7 @@ export const ContainerTitle = styled.header`
   height: 100px;
   border-radius: 10px 10px 0 0;
   max-width: 1444px;
+  z-index: 0;
 
   .container_logo {
     display: flex;
@@ -186,4 +188,5 @@ export const ContainerLoading = styled.div`
   margin: 0;
   color: var(--white);
   font-size: 5rem;
+  z-index: 1;
 `;
